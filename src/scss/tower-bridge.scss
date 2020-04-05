@@ -1,0 +1,117 @@
+@import "./variables.scss";
+
+// Fully customizable, try changin these vars.
+$tb-size: 15em;
+$tb-width: $tb-size * 3;
+$tb-color-main: $layer-1-color;
+$tb-color-detail: $layer-1-color;
+
+.tower-bridge {
+  position: absolute;
+  top: -$tb-size;
+
+  width: $tb-width;
+  height: $tb-size;
+  border-bottom: $tb-size/20 solid $tb-color-detail;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: $tb-size * 3/5;
+    margin: auto;
+
+    width: $tb-size;
+    height: $tb-size * 6/10;
+    border-top: $tb-size/20 solid $tb-color-detail;
+    z-index: -1;
+  }
+
+  &::before {
+    left: $tb-width/16;
+    transform: rotate(-45deg);
+  }
+  &::after {
+    right: $tb-width/16;
+    transform: rotate(45deg);
+  }
+}
+
+%tower {
+  position: absolute;
+  bottom: 0;
+  background: $tb-color-main;
+  width: $tb-size/5;
+  height: $tb-size * 3/4;
+
+  // Top of the tower
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-left: $tb-size/15 solid transparent;
+    border-right: $tb-size/15 solid transparent;
+    border-bottom: $tb-size/3 solid $tb-color-main;
+  }
+
+  //Tower details
+  &::after {
+    content: "";
+    position: absolute;
+    top: -$tb-size/8;
+    left: -$tb-size/60;
+    width: $tb-size/20;
+    height: $tb-size/4;
+    border-radius: 50%;
+    background: $tb-color-main;
+    box-shadow: ($tb-size/5 - $tb-size/50) 0 0 $tb-color-main;
+    z-index: 100;
+  }
+}
+
+.tower-bridge__left {
+  @extend %tower;
+  right: $tb-width * 2/3;
+}
+
+.tower-bridge__right {
+  @extend %tower;
+  left: $tb-width * 2/3;
+}
+
+.tower-bridge__parts {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+
+  width: $tb-size;
+  height: $tb-size * 6/10;
+  border-top: $tb-size/20 solid $tb-color-detail;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -$tb-size/20;
+    width: $tb-size/2;
+    height: $tb-size/20;
+    background: $tb-color-detail;
+  }
+
+  &::before {
+    left: 0;
+    transform-origin: 0% 50%;
+  }
+
+  &::after {
+    right: 0;
+    transform-origin: 100% 50%;
+  }
+}

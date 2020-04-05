@@ -1,0 +1,45 @@
+@import "variables";
+
+@mixin createBuilding($color: $layer-3-color) {
+  background-color: $color;
+  position: absolute;
+  &::before {
+    background-color: $color;
+    content: "";
+    position: absolute;
+  }
+}
+
+.westminster {
+  @include createBuilding;
+  height: 200px;
+  width: 200px;
+
+  &::before {
+    background-color: $layer-3-color;
+    content: "";
+    height: 125px;
+    width: 100px;
+    top: -50px;
+    right: 200px;
+  }
+
+  & > .beam {
+    background-color: $layer-3-color;
+    height: 30px;
+    width: 10px;
+    position: absolute;
+    top: -80px;
+    left: -100px;
+
+    &::after {
+      background-color: $layer-3-color;
+      content: "";
+      height: 30px;
+      width: 10px;
+      position: absolute;
+      top: 0;
+      right: -90px;
+    }
+  }
+}

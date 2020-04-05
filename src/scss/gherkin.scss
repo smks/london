@@ -1,0 +1,45 @@
+@import "variables";
+
+.gherkin {
+  background-color: $layer-4-color;
+  height: 360px;
+  border-top-right-radius: 100%;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-top: 5px solid $layer-4-color;
+  overflow: hidden;
+  position: absolute;
+  width: 160px;
+
+  &__top {
+    background-color: #014379;
+    height: 60px;
+    position: absolute;
+    width: 140px;
+    top: 0;
+    left: 10px;
+  }
+
+  &__stripe {
+    background-color: #014379;
+    position: absolute;
+    width: 20px;
+    height: 400px;
+    left: 50%;
+    bottom: -80px;
+    transform: rotate(-45deg);
+  }
+
+  &__stripe:nth-child(2) {
+    bottom: -160px;
+  }
+
+  &__stripe:nth-child(3) {
+    bottom: 0;
+  }
+
+  &__stripe:nth-child(4) {
+    bottom: 80px;
+  }
+}

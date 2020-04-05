@@ -1,0 +1,146 @@
+@import "./utils.scss";
+
+// Fully customizable, try changin these vars.
+$le-size: 26em;
+$le-color: #12bbff;
+$le-speed: 60s;
+
+$le-spoke: #12bbff;
+$le-spokes: 16;
+
+$le-capsule-size: $le-size/20;
+$le-capsules: 32;
+
+// Gradient for a spoke
+@function spoke($deg: 90deg, $width: 0.6%) {
+  @return linear-gradient(
+    $deg,
+    transparent 50%- ($width/2),
+    $le-spoke 50%- ($width/2),
+    $le-spoke 50%+ ($width/2),
+    transparent 50%+ ($width/2)
+  );
+}
+
+// Builts the spokes
+@function buildSpokes() {
+  $content: "";
+
+  @for $i from 0 to $le-spokes {
+    $content: $content + spoke($i * (180deg / $le-spokes));
+
+    //Ending
+    @if $i != ($le-spokes - 1) {
+      $content: $content + ", ";
+    }
+  }
+
+  @return unquote($content);
+}
+
+// Return box-shadow depending on deg
+@function le-capsule($deg) {
+  @return (($le-size/2 + $le-size/10) * sin($deg))
+    (($le-size/2 + $le-size/10) * cos($deg)) 0 0 $le-color;
+}
+
+// Builts the capsules
+@function buildCapsules() {
+  $content: "";
+
+  @for $i from 0 to $le-capsules {
+    $content: $content + le-capsule((360deg * $i) / $le-capsules);
+
+    //Ending
+    @if $i != ($le-capsules - 1) {
+      $content: $content + ", ";
+    }
+  }
+
+  @return unquote($content);
+}
+
+body {
+  background: #74969b;
+}
+
+// Animation for the wheel
+@keyframes wheel {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Reversed animation for the stand
+@keyframes stand {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.london-eye {
+  position: absolute;
+  bottom: 100%;
+  width: $le-size;
+  height: $le-size;
+  border-radius: 50%;
+  border: $le-size/15 solid transparent;
+  box-shadow: 0 0 0 $le-size/60 $le-color inset, 0 0 0 $le-size/60 $le-color;
+  background: buildSpokes();
+
+  animation: wheel $le-speed linear infinite;
+
+  // Capsule
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    background: $le-color;
+    width: $le-capsule-size;
+    height: $le-capsule-size;
+
+    box-shadow: buildCapsules();
+  }
+}
+
+.stand {
+  position: absolute;
+  top: $le-size/2;
+  right: 0;
+  left: 0;
+  width: $le-size * 2/3;
+  margin: auto;
+  height: $le-size * 5/8;
+  border-bottom: $le-size/10 solid $le-color;
+
+  transform-origin: 50% 0%;
+  animation: stand $le-speed infinite linear;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -$le-size/30;
+    width: $le-size/20;
+    height: $le-size * 5/7;
+    background: $le-color;
+    border-radius: $le-size/20;
+  }
+
+  // Left
+  &::before {
+    left: $le-size/5.2;
+    transform: rotate(20deg);
+  }
+
+  // Right
+  &::after {
+    right: $le-size/5.2;
+    transform: rotate(-20deg);
+  }
+}

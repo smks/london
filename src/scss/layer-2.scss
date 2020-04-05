@@ -1,0 +1,52 @@
+@import "variables";
+
+.layer-2 {
+  background-color: $layer-2-color;
+  height: 250px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+
+  & > .building {
+    background-color: $layer-2-color;
+    transform: scale(1.25);
+  }
+
+  .london-eye {
+    left: 10%;
+  }
+
+  .building-1 {
+    left: 75%;
+    top: -100px;
+    &::before {
+      background-color: $layer-2-color;
+    }
+  }
+
+  .building-2 {
+    left: 95%;
+    top: -100px;
+  }
+
+  .building-3 {
+    left: 0;
+    &::before {
+      border-bottom: 100px solid $layer-2-color;
+    }
+  }
+
+  .building-4 {
+    left: 40%;
+    top: -100px;
+    &::before {
+      border-bottom: 50px solid $layer-2-color;
+    }
+  }
+
+  .flats-2 {
+    top: -100px;
+    left: 35%;
+  }
+}

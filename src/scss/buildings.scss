@@ -1,0 +1,91 @@
+@import "variables";
+
+@mixin createBuilding($color: $layer-1-color) {
+  background-color: $color;
+  position: absolute;
+  &::before {
+    background-color: $color;
+    content: "";
+    position: absolute;
+  }
+}
+
+.building {
+  @include createBuilding;
+}
+
+// Building 1
+
+.building-1 {
+  height: 100px;
+  width: 75px;
+
+  &::before {
+    height: 50px;
+    width: 35px;
+    top: -50px;
+    left: 20px;
+  }
+}
+
+// Building 2
+
+.building-2 {
+  height: 150px;
+  width: 75px;
+  top: -150px;
+  left: 45%;
+  &::before {
+    height: 30px;
+    width: 35px;
+    top: -30px;
+    left: 20px;
+  }
+}
+
+// Building 3
+
+.building-3 {
+  height: 150px;
+  width: 100px;
+  top: -150px;
+  left: 45%;
+  &::before {
+    background-color: transparent;
+    top: -100px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid $layer-1-color;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Building 4
+
+.building-4 {
+  height: 100px;
+  width: 50px;
+  left: 45%;
+  &::before {
+    background-color: transparent;
+    top: -50px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid $layer-1-color;
+    width: 0;
+    height: 0;
+  }
+}
+
+.flats {
+  @include createBuilding();
+  height: 200px;
+  width: 200px;
+}
+
+.flats-2 {
+  @include createBuilding();
+  height: 100px;
+  width: 250px;
+}

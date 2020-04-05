@@ -1,0 +1,182 @@
+.big-ben {
+  background-color: $layer-3-color;
+  width: 90px;
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+  margin-top: -40px;
+  border-left: 4px solid $layer-3-color;
+  border-right: 4px solid $layer-3-color;
+  border-top: 4px solid $layer-3-color;
+  top: -300px;
+  z-index: 6;
+}
+.t1 {
+  position: absolute;
+  background-color: $layer-3-color;
+  width: 120px;
+  height: 120px;
+  border: 4px solid $layer-3-color;
+  margin-top: 30px;
+  margin-left: -20px;
+}
+.clock {
+  position: absolute;
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin-top: 20px;
+  margin-left: 22px;
+  border: 4px solid $layer-3-color;
+}
+.clock::after {
+  content: "";
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 3px solid $layer-3-color;
+  margin-top: 7px;
+  margin-left: 7px;
+  position: absolute;
+}
+.c1 {
+  position: absolute;
+  background-color: $layer-3-color;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  margin-top: 30px;
+  margin-left: 30px;
+  z-index: 3;
+}
+.c1::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background-color: $layer-3-color;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: -15px;
+  margin-left: 2px;
+}
+.c1::after {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 4px;
+  background-color: $layer-3-color;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+.t3 {
+  position: absolute;
+}
+.t3 span {
+  display: inline-block;
+}
+.t31 {
+  background-color: $layer-3-color;
+  width: 10px;
+  height: 15px;
+  margin-left: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 2.4px solid $layer-3-color;
+  margin-top: 3px;
+  margin-left: 4px;
+}
+.top {
+  position: absolute;
+  width: 75px;
+  height: 20px;
+  background: $layer-3-color;
+  transform: perspective(10px) rotateX(8deg);
+  margin-top: -31px;
+  margin-left: 4px;
+  border: 3px solid $layer-3-color;
+}
+.top1 {
+  background-color: $layer-3-color;
+  width: 74px;
+  height: 30px;
+  position: absolute;
+  margin-top: -55px;
+  margin-left: 5px;
+  border: 3px solid $layer-3-color;
+}
+.top1 span {
+  display: inline-block;
+}
+.top11 {
+  background-color: $layer-3-color;
+  width: 15px;
+  height: 16px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: 2px;
+  margin-top: 3px;
+  border: 2px solid $layer-3-color;
+}
+.top1::before {
+  content: "";
+  background-color: $layer-3-color;
+  width: 3px;
+  height: 50px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: -12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.top1::after {
+  content: "";
+  background-color: $layer-3-color;
+  width: 3px;
+  height: 50px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.dome {
+  width: 80px;
+  height: 90px;
+  background-color: $layer-3-color;
+  position: absolute;
+  margin-top: -130px;
+  margin-left: 5px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.dome::before {
+  content: "";
+  width: 70px;
+  height: 84px;
+  position: absolute;
+  background-color: $layer-3-color;
+  margin-top: 5px;
+  margin-left: 5px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.dc {
+  background-color: $layer-3-color;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  margin-top: -150px;
+  margin-left: 40px;
+  z-index: 10;
+}
+.dc::before {
+  content: "";
+  background-color: $layer-3-color;
+  position: absolute;
+  width: 3px;
+  height: 40px;
+  margin-top: -15px;
+  margin-left: 3px;
+}

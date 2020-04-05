@@ -1,0 +1,23 @@
+.message-box {
+  background-color: #0061a8;
+  border: 8px solid white;
+  color: white;
+  padding: 4rem;
+  line-height: 2rem;
+  position: absolute;
+  width: 600px;
+  top: 15%;
+  left: 40%;
+  z-index: 6;
+
+  .headline {
+    font-size: 4em;
+    margin-bottom: 3rem;
+  }
+
+  .jumbo {
+    font-size: 6em;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+}

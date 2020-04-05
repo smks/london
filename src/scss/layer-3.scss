@@ -1,0 +1,40 @@
+@import "variables";
+
+.layer-3 {
+  background-color: $layer-3-color;
+  height: 175px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+
+  & > .building {
+    background-color: $layer-3-color;
+    transform: scale(1.5);
+  }
+
+  .big-ben {
+    right: 10%;
+    top: -250px;
+  }
+
+  .westminster {
+    right: calc(10% + 60px);
+    top: -75px;
+  }
+
+  .building-3 {
+    left: 50%;
+    &::before {
+      border-bottom: 100px solid $layer-3-color;
+    }
+  }
+
+  .building-4 {
+    left: 5%;
+    top: -100px;
+    &::before {
+      border-bottom: 50px solid $layer-3-color;
+    }
+  }
+}

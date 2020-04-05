@@ -1,0 +1,23 @@
+@import "variables";
+
+.layer-4 {
+  background-color: $layer-4-color;
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+
+  .gherkin {
+    bottom: 50px;
+    left: 30%;
+  }
+}
+
+.layer-4-overlay {
+  background-color: $layer-4-color;
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  z-index: 4;
+}

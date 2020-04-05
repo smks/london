@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+$sky-color-dark: #5fd7e8;
+$sky-color-light: #b3f3fc;
+
+.sky {
+  background: linear-gradient($sky-color-dark, $sky-color-light);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
